@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div id="loginPage">
+<div class="box">
+
+<h2 id="loginTitle">Student Login</h2>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="username" placeholder="Enter Username" required>
+<input type="password" id="password" placeholder="Enter Password" required>
+
+<canvas id="captchaCanvas" width="220" height="60"></canvas>
+<button type="button" id="refreshBtn" onclick="generateCaptcha()">↻</button>
+
+<input type="text" id="captchaInput" placeholder="Enter Captcha" required>
+
+<button type="submit">Login</button>
+</form>
+
+<span class="create-link" onclick="alert('Create Account Page Coming Soon!')">
+Create New Account
+</span>
+
+</div>
+</div>
+
+<div id="dashboard">
+
+<div class="dashboard-header">
+    <h2 id="dashboardTitle">Student Dashboard</h2>
+
+    <div class="profile-section">
+        <div class="id-number">
+            ID No: <span id="studentID">24KQ1A5444</span>
+        </div>
+
+        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+             class="profile-pic">
+    </div>
+</div>
+
+<div class="dashboard-container">
+
+    <div class="academic-box">
+        <h3 style="color:#0d47a1;">Academic Details</h3>
+        <b>Name:</b> <span id="studentName">Venkey</span><br><br>
+        <b>Roll No:</b> 24KQ1A5444<br><br>
+        <b>Course:</b> B.Tech Artificial Intelligence & Data Science<br><br>
+        <b>Semester:</b> 4<br><br>
+        <b>CGPA:</b> 8.7
+    </div>
+
+    <div class="chart-box">
+        <h4>Student Marks/Accuracy</h4>
+        <canvas id="marksChart"></canvas>
+    </div>
+    <div class="chart-box">
+        <h4>Historical Performance</h4>
+        <canvas id="historyChart"></canvas>
+    </div>
+    <div class="chart-box">
+        <h4>Marks Distribution (0-100)</h4>
+        <canvas id="marksHistogram"></canvas>
+    </div>
+
+    <div class="data-table-section">
+        <h3>Complete Data Table</h3>
+        <div id="dataTableContainer"></div>
+    </div>
+
+    <div class="ai-section">
+        <h3>Chat with GitHub Copilot</h3>
+        <div id="chatLog" class="chat-log"></div>
+        <div class="chat-input">
+            <input id="msg" placeholder="Type your message...">
+            <button onclick="sendAI()">Send</button>
+        </div>
+        <p id="result" class="bot-output"></p>
+        <div class="edge-form">
+            <input id="edgeFrom" placeholder="From node">
+            <input id="edgeTo" placeholder="To node">
+            <input id="edgeCost" placeholder="Cost" type="number" step="any">
+            <button onclick="addEdge()">Add Edge</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
